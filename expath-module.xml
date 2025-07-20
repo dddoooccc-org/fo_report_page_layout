@@ -1,0 +1,14 @@
+<package xmlns="http://expath.org/ns/pkg"
+         name="urn:dddoooccc.org:ns:fo:report"
+         version="1.0"
+         abbrev="report"
+         spec="2.0">
+
+   <title>XSL-FO Report Page-Layout</title>
+
+   <xslt>
+      <import-uri>urn:dddoooccc.org:ns:fo:report</import-uri>
+      <file>fo_report_page_layout.xsl</file>
+   </xslt>
+
+</package>
