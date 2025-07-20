@@ -12,9 +12,10 @@ This report page-layout is  oneside, no-first-page-specific, no-last-page-specif
 
 ## Usage
 
-1. Configure this package to An XSLT Tool. (In Saxon, write `<xsltPackages>` Saxon Configuretion file.)
-2. In stylesheet, load package with `<xsl:use-package>`.
-3. Call the templates.
+1. Download XSLT file (Not supported yet EXPath packaging system)
+2. Configure this package to An XSLT Tool (In Saxon, write `<xsltPackages>` Saxon Configuretion file.)
+3. In stylesheet, load package with `<xsl:use-package>`.
+4. Call the templates.
    * Ordinally, `report:ins.layout-master-set` and `report:ins.static-contents`
 
 You must override 2 templates below;
