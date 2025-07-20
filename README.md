@@ -23,7 +23,7 @@ You must override 2 templates below;
 * `report:ins.running-footer` ( `as="element(fo:block-container)"`)
 
 
-### normal exmple
+### Basic
 
 For example, running-header has a `<fo:retrieve-marker>` to retrieve a title which marked-up with `fo:marker` in flow-contents, and running-footer has a `<fo:page-number>` for current page-number.
 
@@ -82,4 +82,25 @@ exclude-result-prefixes="report"
 </xsl:stylesheet>
 ```
 
+### Advanced
 
+You can override `xsl:attribute-set` or `xsl:variable` .
+**YOU MUST OVERRIDE ** `xsl:attribute-set` (attribute-set composition mechanism doesn't work into the package).
+
+```xslt
+<!-- -->
+<xsl:attribute-set name="mypage">
+   <xsl:attribute name="page-width" select="'108mm'"/>
+   <xsl:attribute name="page-height" select="'148mm'"/>
+</xsl:attribute-set>
+
+ <xsl:use-package name="urn:dddoooccc.org:ns:fo:report" version="*">
+     <xsl:accept names="*" component="template" visibility="public"/>
+     <xsl:accept names="*" component="variable" visibility="public"/>
+     <xsl:accept names="*" component="attribute-set" visibility="public"/>
+
+     <xsl:override>
+       <xsl:attribute-set name="report:atts_common.simple-page-master" use-attribute-sets="mypage"/>
+     </xsl:override>
+</xsl:use-package>
+```
